@@ -20,7 +20,9 @@ class App extends Component {
       value: this.state.input,
     };
 
-    const newList = JSON.parse(localStorage.getItem("list"));
+    let newList = []
+    console.log(Items)
+    if (localStorage.getItem('list')) { newList = JSON.parse(localStorage.getItem("list")); }
     newList.push(Items);
     localStorage.setItem("list", JSON.stringify(newList));
 
